@@ -1,9 +1,12 @@
+import { Discount } from './discount';
 import { CartItem } from './interfaces/cart-item';
 
 // quantas pessoas vão vir pedir para alterar alguma coisa que esteja relacionada com esta classe? Se for mais de uma então esta classe tem mais de uma responsabilidade
 
 export class ShoppingCart { // de acordo com o clean code, a classe está coesa quando ela trabalha somente com metodos de seus atributos
   private readonly _items: CartItem[] = [];
+
+  constructor(private readonly discount: Discount) {}
 
   addItem(item: CartItem): void {
     this._items.push(item);
@@ -19,6 +22,10 @@ export class ShoppingCart { // de acordo com o clean code, a classe está coesa 
 
   total(): number {
     return +this._items.reduce((total, next) => total + next.price, 0).toFixed(2); // colocar o + na frente converte de string para number
+  }
+
+  totalWithDicount(): number {
+    return this.discount.calculate(this.total());
   }
 
   // como só tem esta validação aqui, pode manter
