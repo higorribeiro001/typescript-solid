@@ -1,0 +1,7 @@
+npm i jest ts-jest @types/jest -D
+
+npx create-jest@latest
+
+npx ts-jest config:init
+
+- procurar por testes: npx jest
