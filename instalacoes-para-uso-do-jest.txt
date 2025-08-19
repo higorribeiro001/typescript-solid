@@ -5,3 +5,5 @@ npx create-jest@latest
 npx ts-jest config:init
 
 - procurar por testes: npx jest
+
+npm run test:silent

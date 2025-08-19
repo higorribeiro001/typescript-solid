@@ -1,7 +1,8 @@
 describe('TESTANDO ALGUMA COISA', () => {
   it('should return one', () => {
     const number = 1;
-    expect(number).not.toBe(1);
+    // expect(number).not.toBe(1);
+    expect(number).toBe(1);
   }); // é igual ao test()
 });
 
